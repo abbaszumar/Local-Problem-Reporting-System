@@ -1,10 +1,60 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+
+/* Header */
+
+.site-header {
+  background: #1f2937;
+  color: white;
+  padding: 15px 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 24px;
+}
+
+.main-navigation {
+  display: flex;
+  gap: 20px;
+}
+
+.main-navigation a {
+  color: white;
+  text-decoration: none;
+}
+
+.main-navigation a:hover {
+  text-decoration: underline;
+}
+
+
+/* Main content */
+
+main {
+  min-height: calc(100vh - 140px);
+}
+
+
+/* Footer */
+
+.site-footer {
+  background: #111827;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+}
