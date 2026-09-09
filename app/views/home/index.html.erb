@@ -1,4 +1,262 @@
 <% content_for :title, "Home - Local Problem Reporting System" %>
 
-<h2>Welcome</h2>
-<p>This is the Local Problem Reporting System.</p>
+<section class="hero-section">
+  <div class="container hero-content">
+
+    <div class="hero-text">
+      <span class="hero-badge">COMMUNITY PROBLEM REPORTING</span>
+
+      <h1>
+        Report a Problem.
+        <span>Make Your Community Better.</span>
+      </h1>
+
+      <p>
+        Found a problem in your area? Report it quickly and easily.
+        Your report will be sent to the appropriate department for action.
+      </p>
+
+      <div class="hero-actions">
+        <%= link_to "Report a Problem", "#report-categories", class: "btn btn-primary" %>
+        <%= link_to "Track a Report", "#track-report", class: "btn btn-secondary" %>
+      </div>
+
+      <div class="hero-note">
+        <span class="status-dot"></span>
+        Your community. Your voice. Your report.
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="report-icon">📍</div>
+
+      <h3>Something needs attention?</h3>
+
+      <p>
+        Tell us what's wrong and we'll help direct your report
+        to the department responsible for resolving it.
+      </p>
+
+      <div class="mini-report">
+        <div class="mini-icon">🗑️</div>
+        <div>
+          <strong>Garbage Collection</strong>
+          <span>Report an issue</span>
+        </div>
+      </div>
+
+      <div class="mini-report">
+        <div class="mini-icon">🛣️</div>
+        <div>
+          <strong>Road Issue</strong>
+          <span>Report an issue</span>
+        </div>
+      </div>
+
+      <div class="mini-report">
+        <div class="mini-icon">🚰</div>
+        <div>
+          <strong>Sanitation</strong>
+          <span>Report an issue</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="categories-section" id="report-categories">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="section-label">REPORT AN ISSUE</span>
+
+      <h2>What problem are you facing?</h2>
+
+      <p>
+        Choose a category below to report a problem in your community.
+      </p>
+    </div>
+
+    <div class="category-grid">
+
+      <%= link_to "#", class: "category-card" do %>
+        <div class="category-icon garbage-icon">🗑️</div>
+        <h3>Garbage</h3>
+        <p>Uncollected garbage, waste disposal and cleanliness issues.</p>
+        <span class="category-link">Report issue →</span>
+      <% end %>
+
+      <%= link_to "#", class: "category-card" do %>
+        <div class="category-icon road-icon">🛣️</div>
+        <h3>Road Issues</h3>
+        <p>Potholes, damaged roads and other road-related problems.</p>
+        <span class="category-link">Report issue →</span>
+      <% end %>
+
+      <%= link_to "#", class: "category-card" do %>
+        <div class="category-icon sanitation-icon">🚰</div>
+        <h3>Sanitation</h3>
+        <p>Drainage, sewage and sanitation-related problems.</p>
+        <span class="category-link">Report issue →</span>
+      <% end %>
+
+      <%= link_to "#", class: "category-card" do %>
+        <div class="category-icon water-icon">💧</div>
+        <h3>Water Supply</h3>
+        <p>Water leakage, supply interruptions and related issues.</p>
+        <span class="category-link">Report issue →</span>
+      <% end %>
+
+      <%= link_to "#", class: "category-card" do %>
+        <div class="category-icon light-icon">💡</div>
+        <h3>Street Lights</h3>
+        <p>Broken or non-functioning street lights in your area.</p>
+        <span class="category-link">Report issue →</span>
+      <% end %>
+
+      <%= link_to "#", class: "category-card" do %>
+        <div class="category-icon other-icon">📋</div>
+        <h3>Other</h3>
+        <p>Report a community problem that doesn't fit another category.</p>
+        <span class="category-link">Report issue →</span>
+      <% end %>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="how-section">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="section-label">HOW IT WORKS</span>
+
+      <h2>Reporting a problem is simple</h2>
+
+      <p>
+        It only takes a few steps to bring an issue to the attention
+        of the responsible department.
+      </p>
+    </div>
+
+    <div class="steps-grid">
+
+      <div class="step-card">
+        <div class="step-number">01</div>
+        <div class="step-icon">📝</div>
+        <h3>Report</h3>
+        <p>
+          Tell us about the problem and provide the location and
+          any useful details.
+        </p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">02</div>
+        <div class="step-icon">🏢</div>
+        <h3>Assigned</h3>
+        <p>
+          Your report is directed to the department responsible
+          for handling the issue.
+        </p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">03</div>
+        <div class="step-icon">✅</div>
+        <h3>Resolved</h3>
+        <p>
+          The department works on the issue and updates the
+          status of your report.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="stats-section">
+  <div class="container stats-grid">
+
+    <div class="stat">
+      <strong>0</strong>
+      <span>Problems Reported</span>
+    </div>
+
+    <div class="stat">
+      <strong>0</strong>
+      <span>Problems Resolved</span>
+    </div>
+
+    <div class="stat">
+      <strong>0</strong>
+      <span>Active Reports</span>
+    </div>
+
+    <div class="stat">
+      <strong>0</strong>
+      <span>Departments</span>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="track-section" id="track-report">
+  <div class="container">
+
+    <div class="track-card">
+
+      <div>
+        <span class="section-label">TRACK YOUR REPORT</span>
+
+        <h2>Already submitted a report?</h2>
+
+        <p>
+          Check the current status of your problem report
+          using your report number.
+        </p>
+      </div>
+
+      <div class="track-form">
+        <input
+          type="text"
+          placeholder="Enter report number"
+          aria-label="Report number"
+        >
+
+        <button type="button" class="btn btn-primary">
+          Track Report
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="cta-section">
+  <div class="container">
+
+    <div class="cta-content">
+      <span class="section-label">MAKE A DIFFERENCE</span>
+
+      <h2>See something that needs fixing?</h2>
+
+      <p>
+        Your report can help make your neighborhood cleaner,
+        safer and better for everyone.
+      </p>
+
+      <%= link_to "Report a Problem", "#report-categories", class: "btn btn-white" %>
+    </div>
+
+  </div>
+</section>

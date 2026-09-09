@@ -58,3 +58,105 @@ main {
 .site-footer p {
   margin: 0;
 }
+
+.site-header {
+  background: white;
+  border-bottom: 1px solid #e2e9e6;
+  position: relative;
+  z-index: 10;
+}
+
+.header-content {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8f5f1;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.brand-name {
+  color: #17211f;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.brand-subtitle {
+  color: #64716e;
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.main-navigation {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.main-navigation a {
+  color: #4f5c59;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.main-navigation a:hover {
+  color: #176b5b;
+}
+
+.main-navigation .nav-signup {
+  padding: 10px 17px;
+  color: white;
+  background: #176b5b;
+  border-radius: 7px;
+}
+
+.main-navigation .nav-signup:hover {
+  color: white;
+  background: #0f5145;
+}
+
+@media (max-width: 600px) {
+  .header-content {
+    min-height: 65px;
+  }
+
+  .brand-name {
+    font-size: 13px;
+  }
+
+  .brand-subtitle {
+    display: none;
+  }
+
+  .main-navigation {
+    gap: 10px;
+  }
+
+  .main-navigation a {
+    font-size: 12px;
+  }
+
+  .main-navigation a:first-child {
+    display: none;
+  }
+}
+
+@import url("home.css");

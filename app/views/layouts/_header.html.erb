@@ -2,14 +2,19 @@
   <div class="container">
     <div class="header-content">
 
-      <h1 class="site-title">
-        Local Problem Reporting System
-      </h1>
+      <%= link_to root_path, class: "brand" do %>
+        <div class="brand-icon">📍</div>
+
+        <div>
+          <div class="brand-name">Local Problem Reporting</div>
+          <div class="brand-subtitle">Community Service Portal</div>
+        </div>
+      <% end %>
 
       <nav class="main-navigation">
         <%= link_to "Home", root_path %>
         <%= link_to "Login", login_path %>
-        <%= link_to "Sign Up", signup_path %>
+        <%= link_to "Sign Up", signup_path, class: "nav-signup" %>
       </nav>
 
     </div>
