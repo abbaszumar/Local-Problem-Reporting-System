@@ -1,50 +1,129 @@
-
 <% content_for :title, "Sign Up - Local Problem Reporting System" %>
 
-<div class="auth-container">
-  <div class="auth-card">
+<section class="auth-page">
+  <div class="auth-container">
 
-    <h2>Create Account</h2>
 
-    <% if @user.errors.any? %>
-      <div class="error-messages">
-        <% @user.errors.full_messages.each do |message| %>
-          <p><%= message %></p>
-        <% end %>
+<div class="auth-intro">
+  <div class="auth-brand-icon">📍</div>
+
+  <span class="auth-label">JOIN YOUR COMMUNITY</span>
+
+  <h1>Create your account</h1>
+
+  <p>
+    Create an account to report local problems, track your reports,
+    and help make your community cleaner, safer, and better.
+  </p>
+
+  <div class="auth-benefits">
+    <div class="auth-benefit">
+      <span>✓</span>
+      <div>
+        <strong>Report problems easily</strong>
+        <small>Submit issues directly from your account.</small>
       </div>
-    <% end %>
+    </div>
 
-    <%= form_with model: @user, url: signup_path do |form| %>
-
-      <div class="form-group">
-        <%= form.label :name %>
-        <%= form.text_field :name, required: true %>
+    <div class="auth-benefit">
+      <span>✓</span>
+      <div>
+        <strong>Track your reports</strong>
+        <small>Stay updated on the progress of your reports.</small>
       </div>
+    </div>
 
-      <div class="form-group">
-        <%= form.label :email %>
-        <%= form.email_field :email, required: true %>
+    <div class="auth-benefit">
+      <span>✓</span>
+      <div>
+        <strong>Help your community</strong>
+        <small>Bring local issues to the right department.</small>
       </div>
-
-      <div class="form-group">
-        <%= form.label :password %>
-        <%= form.password_field :password, required: true %>
-      </div>
-
-      <div class="form-group">
-        <%= form.label :password_confirmation %>
-        <%= form.password_field :password_confirmation, required: true %>
-      </div>
-
-      <%= form.submit "Sign Up", class: "btn" %>
-
-    <% end %>
-
-    <p class="auth-link">
-      Already have an account?
-      <%= link_to "Login", login_path %>
-    </p>
-
+    </div>
   </div>
 </div>
 
+<div class="auth-card">
+
+  <div class="auth-card-header">
+    <h2>Create Account</h2>
+    <p>Fill in your details to get started.</p>
+  </div>
+
+  <% if @user.errors.any? %>
+    <div class="error-messages">
+      <div class="error-title">
+        Please fix the following:
+      </div>
+
+      <% @user.errors.full_messages.each do |message| %>
+        <p>• <%= message %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= form_with model: @user, url: signup_path, class: "auth-form" do |form| %>
+
+    <div class="form-group">
+      <%= form.label :name, "Full Name" %>
+
+      <div class="input-wrapper">
+        <span class="input-icon">👤</span>
+        <%= form.text_field :name,
+            placeholder: "Enter your full name",
+            autocomplete: "name",
+            required: true %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :email, "Email Address" %>
+
+      <div class="input-wrapper">
+        <span class="input-icon">✉️</span>
+        <%= form.email_field :email,
+            placeholder: "Enter your email address",
+            autocomplete: "email",
+            required: true %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :password, "Password" %>
+
+      <div class="input-wrapper">
+        <span class="input-icon">🔒</span>
+        <%= form.password_field :password,
+            placeholder: "Create a password",
+            autocomplete: "new-password",
+            required: true %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :password_confirmation, "Confirm Password" %>
+
+      <div class="input-wrapper">
+        <span class="input-icon">🔒</span>
+        <%= form.password_field :password_confirmation,
+            placeholder: "Confirm your password",
+            autocomplete: "new-password",
+            required: true %>
+      </div>
+    </div>
+
+    <%= form.submit "Create Account", class: "btn auth-submit" %>
+
+  <% end %>
+
+  <div class="auth-divider">
+    <span>Already have an account?</span>
+  </div>
+
+  <%= link_to "Login to your account", login_path, class: "auth-login-link" %>
+
+</div>
+
+
+  </div>
+</section>

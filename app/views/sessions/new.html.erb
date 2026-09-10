@@ -1,30 +1,102 @@
 <% content_for :title, "Login - Local Problem Reporting System" %>
 
-<div class="auth-container">
-  <div class="auth-card">
+<section class="auth-page">
+  <div class="auth-container login-container">
 
-    <h2>Login</h2>
 
-    <%= form_with url: login_path do |form| %>
+<div class="auth-intro">
+  <div class="auth-brand-icon">📍</div>
 
-      <div class="form-group">
-        <%= form.label :email %>
-        <%= form.email_field :email, required: true %>
+  <span class="auth-label">WELCOME BACK</span>
+
+  <h1>Welcome back.</h1>
+
+  <p>
+    Sign in to your account to report local problems, track your
+    submitted reports, and stay informed about their progress.
+  </p>
+
+  <div class="auth-benefits">
+    <div class="auth-benefit">
+      <span>✓</span>
+      <div>
+        <strong>Report local problems</strong>
+        <small>Bring community issues to the right department.</small>
       </div>
+    </div>
 
-      <div class="form-group">
-        <%= form.label :password %>
-        <%= form.password_field :password, required: true %>
+    <div class="auth-benefit">
+      <span>✓</span>
+      <div>
+        <strong>Track your reports</strong>
+        <small>Check the status of problems you have reported.</small>
       </div>
+    </div>
 
-      <%= form.submit "Login", class: "btn" %>
-
-    <% end %>
-
-    <p class="auth-link">
-      Don't have an account?
-      <%= link_to "Sign Up", signup_path %>
-    </p>
-
+    <div class="auth-benefit">
+      <span>✓</span>
+      <div>
+        <strong>Make a difference</strong>
+        <small>Help create a cleaner and better community.</small>
+      </div>
+    </div>
   </div>
 </div>
+
+<div class="auth-card">
+
+  <div class="auth-card-header">
+    <h2>Login</h2>
+    <p>Enter your account details to continue.</p>
+  </div>
+
+  <% if flash[:alert] %>
+    <div class="error-messages">
+      <div class="error-title">Login failed</div>
+      <p>• <%= flash[:alert] %></p>
+    </div>
+  <% end %>
+
+  <%= form_with url: login_path, class: "auth-form" do |form| %>
+
+    <div class="form-group">
+      <%= form.label :email, "Email Address" %>
+
+      <div class="input-wrapper">
+        <span class="input-icon">✉️</span>
+
+        <%= form.email_field :email,
+            placeholder: "Enter your email address",
+            autocomplete: "email",
+            required: true %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :password, "Password" %>
+
+      <div class="input-wrapper">
+        <span class="input-icon">🔒</span>
+
+        <%= form.password_field :password,
+            placeholder: "Enter your password",
+            autocomplete: "current-password",
+            required: true %>
+      </div>
+    </div>
+
+    <%= form.submit "Login", class: "btn auth-submit" %>
+
+  <% end %>
+
+  <div class="auth-divider">
+    <span>New to the community?</span>
+  </div>
+
+  <%= link_to "Create a new account", signup_path, class: "auth-login-link" %>
+
+</div>
+
+
+  </div>
+</section>
